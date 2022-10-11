@@ -1,0 +1,4 @@
+fronted/node_modules
+server/node_modules
+*.zip
+backend/
