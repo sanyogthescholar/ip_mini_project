@@ -27,9 +27,10 @@ const View=()=> {
  */
 const [data, setData] = useState("");
 const getData = async () => {
-    const fetchs = await fetch("http://localhost:4000/courses", {
+    const fetchs = await fetch("api/courses", {
       method: "GET" // default, so we can ignore
     });
+    axios.get("/api/courses")
     const all_courses = await fetchs.json();
     console.log(all_courses);
     setData(all_courses);

@@ -18,31 +18,20 @@ async function connectToDatabase()
     const db = await client.db(parse(uri).pathname.substr(1));
 
     cachedDb = db;
+    console.log("Connected to db")
     return db;
 }
 
 export default async (req, res) => {
     try {
-        const body = req.body
-        //console.log(req)
-        const yojana = {
-            yojanaName: body.yojanaName,
-            minAge: body.minAge,
-            maxAge: body.maxAge,
-            imageUrl: body.imageUrl,
-            ministry: body.ministry,
-        }
+        console.log("Inside default log function");
 
         const db = await connectToDatabase();
-        const collection = await db.collection(process.env.COLLECTION);
-        await collection
-            .insertOne(yojana)
-            .then(() => {
-                res.status(200).send();
-            })
-            .catch(err => {
-                throw err;
-            });
+        const collection = await db.collection("courses");
+        let apos = await collection.find({}).toArray();
+        //console.log(apos)
+        //console.log("Fetched data")
+        res.status(200).json(apos)
         }
         catch(error)
         {
