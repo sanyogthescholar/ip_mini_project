@@ -31,7 +31,7 @@ const Navbar = () => {
                 <Link to="Service" onClick={() => setIsOpen(!isOpen)}>Service <i><AiOutlineCustomerService /></i></Link>
                 <Link to="Contact" onClick={() => setIsOpen(!isOpen)}>Contact <i><MdContactPage /></i></Link>
                 {/* <NavLink to="/Resume" onClick={() => setIsOpen(!isOpen)}>Resume<i><BiLogIn /></i></NavLink> */}
-                <NavLink to="/Addcourse" onClick={() => setIsOpen(!isOpen)}>Add Yojana<i><BiLogIn /></i></NavLink>
+                <NavLink to="/Addcourse" onClick={() => setIsOpen(!isOpen)}>Add Course<i><BiLogIn /></i></NavLink>
                 <NavLink to="/SimpleUser" onClick={() => setIsOpen(!isOpen)}>Sign Up<i><BiLogIn /></i></NavLink>
                 <NavLink to="/Notification" onClick={() => setIsOpen(!isOpen)}>
                     Notification<Badge badgeContent={4} color="primary">

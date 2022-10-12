@@ -12,33 +12,21 @@ import axios from "axios";
 const View=()=> {
   const params = useParams();
   const name = params.name;
-  // const url = "http://localhost:4000/courses"
-
-  // const [data, setData] = useState("");
-  // useEffect(() => {
-  //   const doFetch = async () => { const res = await fetch(url) 
-  //     setData(res.json().data) };
-  //   doFetch();
-  // }, []);
-
- /*  useEffect(() => {
-    fetchData();
-  },[])
- */
 const [data, setData] = useState("");
-const getData = async () => {
-    const fetchs = await fetch("api/courses", {
-      method: "GET" // default, so we can ignore
-    });
-    axios.get("/api/courses")
-    const all_courses = await fetchs.json();
-    console.log(all_courses);
-    setData(all_courses);
-    console.log(data);
-  };
 
   useEffect(() => {
-   getData()
+    async function getData() {
+      const fetchs = await fetch("api/courses", {
+        method: "GET" // default, so we can ignore
+      });
+      axios.get("/api/courses")
+      const all_courses = await fetchs.json();
+      console.log(all_courses);
+      setData(all_courses);
+      console.log(data);
+    }
+    getData()
+   fetch("/api/courses")
   },[]);
 
   return (

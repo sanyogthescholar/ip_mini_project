@@ -31,7 +31,7 @@ export default async (req, res) => {
         let apos = await collection.find({}).toArray();
         //console.log(apos)
         //console.log("Fetched data")
-        res.status(200).json(apos)
+        res.status(200).json({data:apos})
         }
         catch(error)
         {

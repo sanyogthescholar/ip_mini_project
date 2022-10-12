@@ -25,18 +25,17 @@ export default async (req, res) => {
     try {
         const body = req.body
         //console.log(req)
-        const yojana = {
-            yojanaName: body.yojanaName,
-            minAge: body.minAge,
-            maxAge: body.maxAge,
+        const course = {
+            courseName: body.courseName,
+            description: body.description,
             imageUrl: body.imageUrl,
-            ministry: body.ministry,
+            provider: body.provider,
         }
 
         const db = await connectToDatabase();
         const collection = await db.collection(process.env.COLLECTION);
         await collection
-            .insertOne(yojana)
+            .insertOne(course)
             .then(() => {
                 res.status(200).send();
             })

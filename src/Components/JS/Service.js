@@ -15,10 +15,9 @@ import {Link} from 'react-router-dom'
 export default function RecipeReviewCard() {
 
   const [set, reset] = useState('');
-
   const [data, setData] = useState([]);
   const getData = async () => {
-    const fetchs = await fetch("http://localhost:4000/yojanas", {
+    const fetchs = await fetch("api/courses", {
       method: "GET" // default, so we can ignore
     });
     const all_courses = await fetchs.json();
@@ -44,20 +43,20 @@ export default function RecipeReviewCard() {
     <div style={{display:"flex",alignItems:"center",justifyContent:"center",flexWrap:"wrap",margin:"20px"}}>
     { 
 
-      data/* .filter(function (val) {
+      data.filter(function (val) {
               if (set === "") {
                 return val;
-              } else if (val.name.toLowerCase().includes(set.toLowerCase())) {
+              } else if (val.courseName.toLowerCase().includes(set.toLowerCase())) {
                 return val;
               }
-            }) */
+            }) 
         .map((item)=>{
             return(
                 <>
                 <Card sx={{ maxWidth: 345,margin:'20px' }}  data-aos={item.class}>
       <CardHeader
-        title={item.yojanaName}
-        subheader={item.ministry}
+        title={item.courseName}
+        subheader={item.provider}
       />
       <CardMedia
         component="img"
@@ -67,13 +66,12 @@ export default function RecipeReviewCard() {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Min Age: {item.minAge}<br></br>
-          Max Age: {item.maxAge}
+          Description: {item.description}<br></br>
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <Link to={"/View/"+item.yojanaName} style={{listStyle:"none",color:"red",textDecoration:"none"}}>Read More</Link>
+          <Link to={"/View/"+item.courseName} style={{listStyle:"none",color:"red",textDecoration:"none"}}>Read More</Link>
         </IconButton>
         <IconButton aria-label="share">
           <ShareIcon />

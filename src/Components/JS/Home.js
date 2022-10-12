@@ -35,11 +35,11 @@ function Home() {
       <header className='head' style={{minHeight:"100vh"}}>
         <div class="h-text">
           <h2 style={{fontWeight:"500"}}>WGROW</h2>
-          <h1 data-aos="fade-right">WELC<span style={{ color: "brown" }}>0</span>ME</h1>
+          <h1 data-aos="fade-right">WELCOME</h1>
           <p data-aos="fade-left" style={{letterSpacing:"2px"}}>First Platform to connect</p>
-          <p data-aos="fade-right">Find schemes for you</p>
+          <p data-aos="fade-right">Find courses for you</p>
           <p data-aos="fade-left">directly</p>
-          <h4 style={{ textDecoration: "none", listStyle: "none" }} data-aos="flip-right"><NavLink to="/" id="order">Lern More</NavLink></h4>
+          <h4 style={{ textDecoration: "none", listStyle: "none" }} data-aos="flip-right"><NavLink to="/" id="order">Learn More</NavLink></h4>
         </div>
         <div className="image">
           {/* <img src={img} data-aos="fade-left" alt="" srcset="" /> */}

@@ -29,10 +29,7 @@ function Footer() {
           <h4 data-aos="flip-left">get help</h4>
           <ul>
             <li  data-aos="fade-right"><Link to="/">FAQ</Link></li>
-            <li  data-aos="fade-left"><Link to="/">shipping</Link></li>
-            <li  data-aos="fade-right"><Link to="/">returns</Link></li>
-            <li  data-aos="fade-left"><Link to="/">order status</Link></li>
-            <li  data-aos="fade-right"><Link to="/">payment options</Link></li>
+            <li  data-aos="fade-left"><Link to="/">Contact Us</Link></li>
           </ul>
         </div>
         <div className="footer-col">

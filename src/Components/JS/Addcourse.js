@@ -6,22 +6,25 @@ import axios from "axios";
 export default function Addcourse() {
   const url = "/api/addcourse";
   const [data, setData] = useState({
-    yojanaName: "",
+    courseName: "",
     minAge: "",
     maxAge: "",
     imageUrl: "",
-    ministry: ""
+    ministry: "",
   });
 
   function submit(e) {
     e.preventDefault();
-    axios({method: "POST", url:url, data:{
-        yojanaName: data.yojanaName,
-        minAge: data.minAge,
-        maxAge: data.maxAge,
+    axios({
+      method: "POST",
+      url: url,
+      data: {
+        courseName: data.courseName,
+        provider: data.provider,
         imageUrl: data.imageUrl,
-        ministry: data.ministry
-    }});
+        description: data.description,
+      },
+    });
     //var final_url = url + `?name=${data.name}&description=${data.description}&link=${data.link}&type_=${data.type_}`
     //console.log(final_url)
     //axios.get(final_url)
@@ -56,9 +59,9 @@ export default function Addcourse() {
           >
             <TextField
               fullWidth
-              label="Yojana Name"
-              id="yojanaName"
-              value={data.yojanaName}
+              label="Course Name"
+              id="courseName"
+              value={data.courseName}
               onChange={(e) => handle(e)}
             />{" "}
           </Box>
@@ -71,13 +74,13 @@ export default function Addcourse() {
           >
             <TextField
               fullWidth
-              label="Ministry Name"
-              id="ministry"
-              value={data.ministry}
+              label="Course Provider Name"
+              id="provider"
+              value={data.provider}
               onChange={(e) => handle(e)}
             />{" "}
           </Box>
-          {/* <Box
+          <Box
             sx={{
               width: 500,
               maxWidth: "100%",
@@ -89,39 +92,6 @@ export default function Addcourse() {
               label="Description"
               id="description"
               value={data.description}
-              onChange={(e) => handle(e)}
-            />{" "}
-          </Box>{" "} */}
-          <Box
-            sx={{
-              width: 500,
-              maxWidth: "100%",
-              padding: "15px",
-            }}
-          >
-            <TextField
-            inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} 
-              fullWidth
-              label="Min Age"
-              id="minAge"
-              type="num"
-              value={data.minAge}
-              onChange={(e) => handle(e)}
-            />{" "}
-          </Box>{" "}
-          <Box
-            sx={{
-              width: 500,
-              maxWidth: "100%",
-              padding: "15px",
-            }}
-          >
-            <TextField
-              fullWidth
-              label="Max Age"
-              id="maxAge"
-              type="num"
-              value={data.maxAge}
               onChange={(e) => handle(e)}
             />{" "}
           </Box>{" "}
@@ -141,9 +111,37 @@ export default function Addcourse() {
               onChange={(e) => handle(e)}
             />{" "}
           </Box>{" "}
-          <div className="mb-3">
-          </div>
-          <button onClick={()=>{alert("Data submitted succesfully")}}> Add Yojana </button>{" "}
+          <select
+            id="type_"
+            name="type_"
+            style={{
+              padding: "15px",
+              border: "0px",
+              outline: "none",
+              width: "250px",
+              height: "50px",
+              borderRadius: "3.5px",
+            }}
+            value={data.type_}
+            onChange={(e) => handle(e)}
+          >
+            <option value="communication" style={{ fontSize: "14px" }}>
+              {" "}
+              communication{" "}
+            </option>{" "}
+            <option value="craftwomanship"> craftwomanship </option>
+            <option value="tutors"> tutors </option>
+            <option value="Singer"> Singer </option>
+          </select>
+          <div className="mb-3"></div>
+          <button
+            onClick={() => {
+              alert("Data submitted succesfully");
+            }}
+          >
+            {" "}
+            Add course{" "}
+          </button>{" "}
         </div>{" "}
       </form>{" "}
     </>
