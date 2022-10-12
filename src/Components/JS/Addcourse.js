@@ -125,10 +125,7 @@ export default function Addcourse() {
             value={data.type_}
             onChange={(e) => handle(e)}
           >
-            <option value="communication" style={{ fontSize: "14px" }}>
-              {" "}
-              communication{" "}
-            </option>{" "}
+            <option value="Communication">Communication</option>
             <option value="Cooking">Cooking</option>
             <option value="Tuitions">Tuitions</option>
             <option value="Singer">Singer</option>
