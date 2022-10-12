@@ -129,9 +129,9 @@ export default function Addcourse() {
               {" "}
               communication{" "}
             </option>{" "}
-            <option value="craftwomanship"> craftwomanship </option>
-            <option value="tutors"> tutors </option>
-            <option value="Singer"> Singer </option>
+            <option value="Cooking">Cooking</option>
+            <option value="Tuitions">Tuitions</option>
+            <option value="Singer">Singer</option>
           </select>
           <div className="mb-3"></div>
           <button

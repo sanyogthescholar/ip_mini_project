@@ -36,21 +36,21 @@ export default function RecipeReviewCard() {
 
   return (
     <div style={{minHeight:"100vh"}} id="Service">
-        <h1 data-aos="flip-left" style={{margin:"20px",textAlign:"center"}}>Find Schemes</h1>
+        <h1 data-aos="flip-left" style={{margin:"20px",textAlign:"center"}}>Find Courses</h1>
         <form className="d-flex" style={{ width: '300px', margin: 'auto', marginBottom: "20px" }}>
           <input className="form-control me-2" style={{ width: '300px' }}  data-aos="fade-right" value={set} onChange={(e) => reset(e.target.value)} type="search" placeholder="Search" aria-label="Search" />
         </form>
     <div style={{display:"flex",alignItems:"center",justifyContent:"center",flexWrap:"wrap",margin:"20px"}}>
     { 
 
-      data.filter(function (val) {
+      /* .filter(function (val) {
               if (set === "") {
                 return val;
               } else if (val.courseName.toLowerCase().includes(set.toLowerCase())) {
                 return val;
               }
-            }) 
-        .map((item)=>{
+            })  */
+        data.map((item)=>{
             return(
                 <>
                 <Card sx={{ maxWidth: 345,margin:'20px' }}  data-aos={item.class}>
